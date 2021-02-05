@@ -1,4 +1,4 @@
-import React, {memo, useEffect} from 'react';
+import React, {memo, useEffect, useCallback} from 'react';
 import {StyleSheet, View, FlatList, SafeAreaView, Text} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {fetchListAsync} from 'src/actions/tasksActions';
@@ -7,20 +7,19 @@ import {TaskItem, Divider} from '../components';
 import {Colors} from '../constants';
 
 function Home() {
+  const dispatch = useDispatch();
+  const userId = '5dfb8eab2f000056c4ffa05c';
+
   const tasks = useSelector((state) => state.tasks.tasks);
+  const fetchList = useCallback(() => {
+    dispatch(fetchListAsync.request(userId));
+  }, [dispatch]);
 
   useEffect(() => {
     fetchList();
     const interval = setInterval(() => fetchList(), 60000);
     return () => clearInterval(interval);
-  }, []);
-
-  const dispatch = useDispatch();
-
-  const fetchList = () => {
-    const userId = '5dfb8eab2f000056c4ffa05c';
-    dispatch(fetchListAsync.request(userId));
-  };
+  }, [fetchList]);
 
   return (
     <SafeAreaView style={styles.container}>

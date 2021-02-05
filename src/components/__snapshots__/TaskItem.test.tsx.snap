@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TaskItem should render without issue 1`] = `
+<ForwardRef
+  activeOpacity={0.8}
+  onPress={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "rgba(50, 50, 50, 0.1)",
+      "borderColor": "#F5FCFF",
+      "borderRadius": 3,
+      "borderWidth": 1,
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "paddingHorizontal": 10,
+      "paddingVertical": 15,
+      "width": 730,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+      }
+    }
+  >
+    <ForwardRef(CheckBoxWithRef)
+      boxType="square"
+      style={
+        Object {
+          "height": 20,
+        }
+      }
+      value={false}
+    />
+    <Icon
+      allowFontScaling={false}
+      color="green"
+      name="check-circle"
+      size={20}
+    />
+    <Text
+      style={
+        Object {
+          "color": "#3c345c",
+          "marginLeft": 5,
+        }
+      }
+    >
+      name
+    </Text>
+  </View>
+  <Text
+    style={
+      Object {
+        "color": "#124c81",
+      }
+    }
+  />
+</ForwardRef>
+`;

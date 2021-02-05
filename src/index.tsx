@@ -11,17 +11,9 @@ const App = () => {
     <Provider store={store}>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView />
-      <Test />
+      <Home />
     </Provider>
   );
 };
 
 export default App;
-
-const Test = () => {
-  return (
-    <>
-      <Home />
-    </>
-  );
-};
